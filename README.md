@@ -9,7 +9,8 @@ A wrapper for the Basecamp API (currently only supports read methods).
 
     var bc = new Basecamp(
       'https://YOUR_COMPANY.basecamphq.com',
-      'API_KEY_HERE'
+      'YOUR_USERNAME',
+      'YOUR_PASSWORD'
     );
 
     http.createServer(function (req, res) {
@@ -17,7 +18,7 @@ A wrapper for the Basecamp API (currently only supports read methods).
         if (err)
           res.end('Could not load your profile!');
 
-        res.end('You are logged in as ' + me.firstName + ' ' + me.lastName);
+        res.end('You are logged in as ' + me.person.firstName + ' ' + me.person.lastName);
       });
     }).listen(8080);
     console.log('Server running at http://localhost:8080/');
